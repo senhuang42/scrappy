@@ -30,7 +30,7 @@ Copy `.env.example` to `.env.local`. Do not commit secrets.
 
 ## How x402 payment works
 
-`POST /api/task` is wrapped with `withX402` from `@x402/next`. Settlement runs only after the handler returns a successful response (status &lt; 400).
+`POST /api/task` is wrapped with `withX402FromHTTPServer` from `@x402/next` (the `withX402` family). Settlement runs only after the handler returns a successful response (status &lt; 400).
 
 1. A client posts `{ "email": "...", "task": "..." }`.
 2. If there is no payment, the server responds **402** with a `PAYMENT-REQUIRED` header.

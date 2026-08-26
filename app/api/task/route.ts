@@ -1,4 +1,4 @@
-import { withX402 } from "@x402/next";
+import { withX402FromHTTPServer, x402HTTPResourceServer } from "@x402/next";
 import { NextRequest, NextResponse } from "next/server";
 import { readPayToEvm } from "@/lib/env";
 import { createPaidTaskIssue } from "@/lib/github";
@@ -64,12 +64,13 @@ function paidHandler(payTo: `0x${string}`) {
   if (cachedHandler && cachedPayTo === payTo) {
     return cachedHandler;
   }
+  const httpServer = new x402HTTPResourceServer(resourceServer, {
+    "POST /api/task": taskRouteConfig(payTo),
+  });
   cachedPayTo = payTo;
-  cachedHandler = withX402(
-    handlePaidTask,
-    taskRouteConfig(payTo),
-    resourceServer,
-  );
+  // Same settlement rule as withX402: charge only after status < 400.
+  // Explicit route key so Bazaar indexes POST /api/task.
+  cachedHandler = withX402FromHTTPServer(handlePaidTask, httpServer);
   return cachedHandler;
 }
 
