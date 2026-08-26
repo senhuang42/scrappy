@@ -11,6 +11,8 @@ reports sizes on the holdout.
 This folder is the product. Polar (SenWorks) sells it as a $12 one-time
 download and delivers a zip of these files automatically.
 
+[Buy the kit](https://buy.polar.sh/polar_cl_X62sEcNs7MOhIzUb4yNIq1xAxBo8KYh2J7qZy19cErK)
+
 ## What a dictionary is for
 
 zstd already finds repeated bytes inside a single buffer. It cannot see the

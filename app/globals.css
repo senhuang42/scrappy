@@ -135,6 +135,24 @@ main {
   line-height: 1.35;
 }
 
+.buy-button {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.65rem 1rem;
+  background: var(--ink);
+  color: var(--fill);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.buy-button:hover,
+.buy-button:focus-visible {
+  background: var(--price);
+}
+
 .buy-lead code,
 .fine code,
 .contents code,
