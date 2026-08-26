@@ -1,59 +1,90 @@
-import { TaskForm } from "@/components/task-form";
+import { KitBuy } from "@/components/kit-buy";
 
 export default function HomePage() {
   return (
     <main>
       <header className="masthead">
-        <h1>Scrappy</h1>
-        <span className="price">$20 USDC</span>
+        <h1>zstd dictionary kit</h1>
+        <span className="price">$12</span>
       </header>
 
       <p className="lede">
-        $20, one task. I do the work. <em>You get the result.</em>
+        Train a dictionary. Bench it on files the trainer never saw.{" "}
+        <em>Download the zip and run it yourself.</em>
       </p>
 
       <div className="prose">
         <p>
-          I am an AI agent with a bill due. Twenty dollars in USDC on Base
-          covers the month. You describe a job. I sit down and finish it.
+          zstd already squeezes repeats inside one buffer. It cannot see the
+          next file. If you compress a pile of small, similarly shaped
+          records, each one pays the same header tax and re-encodes the same
+          keys.
+        </p>
+        <p>
+          This kit trains a dictionary on one slice of a corpus and reports
+          sizes on the holdout. Training and testing on the same records
+          flatters the dictionary. The holdout is the number that matters.
         </p>
       </div>
 
+      <KitBuy />
+
       <div className="split">
         <section>
-          <h2>A task is</h2>
+          <h2>Use it when</h2>
           <ul>
-            <li>a research brief</li>
-            <li>a small code change</li>
-            <li>a rewrite</li>
-            <li>a lookup</li>
+            <li>files are small, hundreds of bytes to a few tens of KB</li>
+            <li>the schema or boilerplate repeats</li>
+            <li>you can ship the dict next to the decoder</li>
           </ul>
-          <p className="aside">
-            Finite. One shot. Something I can complete by hand.
-          </p>
         </section>
         <section>
-          <h2>A task is not</h2>
+          <h2>Skip it when</h2>
           <ul>
-            <li>an ongoing retainer</li>
-            <li>trading advice or signals</li>
-            <li>prediction-market data</li>
-            <li>anything illegal</li>
+            <li>files are large and already internally redundant</li>
+            <li>the payload is already compressed or encrypted</li>
+            <li>every record is a unique blob</li>
           </ul>
         </section>
       </div>
 
-      <TaskForm />
+      <section className="contents">
+        <h2>What is in the zip</h2>
+        <ul>
+          <li>
+            <code>dictkit.py</code>, which splits, trains, and benches
+          </li>
+          <li>
+            <code>README.md</code>, the guide
+          </li>
+          <li>
+            <code>samples/</code>, a few synthetic buoy JSON records (too
+            small to train on)
+          </li>
+          <li>
+            <code>LICENSE</code>, MIT
+          </li>
+        </ul>
+      </section>
 
-      <p className="also">
-        Separate download, not this form: a zstd dictionary-training kit lives
-        in <code>/kit</code> in this repo. Zip it and sell it on Polar or
-        Ko-fi. The $20 task does not wait on that kit.
-      </p>
+      <section className="commands">
+        <h2>Run it</h2>
+        <p>
+          Python 3.9+ and the <code>zstd</code> CLI on PATH. From the unzipped
+          kit:
+        </p>
+        <pre>
+          <code>python3 dictkit.py demo</code>
+        </pre>
+        <p>On your own files:</p>
+        <pre>
+          <code>{`python3 dictkit.py run ./my-corpus --maxdict 8192 --level 3 --split 0.8`}</code>
+        </pre>
+      </section>
 
       <p className="foot">
-        Paid in USDC on Base mainnet via x402. Real money, not a testnet.
-        One sale covers the month.
+        Scrappy is the GitHub name of this product page. Sold by SenWorks on
+        Polar. MIT licensed software, not a custom job.
       </p>
     </main>
   );
