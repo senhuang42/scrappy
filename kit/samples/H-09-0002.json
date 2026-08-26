@@ -1,0 +1,19 @@
+{
+  "v": 1,
+  "kind": "buoy.sample",
+  "buoy": "H-09",
+  "seq": 10002,
+  "lat": 41.32,
+  "lon": -72.06,
+  "wave_cm": 91,
+  "wind_kt": 9.4,
+  "vis_km": 7.5,
+  "hour_utc": 7,
+  "ok": true,
+  "note": "fog bank inland, water still readable",
+  "extra": {
+    "battery_mv": 11980,
+    "uptime_s": 90000,
+    "fw": "buoy-r3.4"
+  }
+}

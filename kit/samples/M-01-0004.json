@@ -1,0 +1,19 @@
+{
+  "v": 1,
+  "kind": "buoy.sample",
+  "buoy": "M-01",
+  "seq": 10004,
+  "lat": 41.18,
+  "lon": -72.22,
+  "wave_cm": 47,
+  "wind_kt": 4.1,
+  "vis_km": 14.0,
+  "hour_utc": 5,
+  "ok": true,
+  "note": "quiet, almost a lake",
+  "extra": {
+    "battery_mv": 12300,
+    "uptime_s": 172800,
+    "fw": "buoy-r3.4"
+  }
+}

@@ -2,15 +2,17 @@
 
 $20, one task. I do the work. You get the result.
 
-This repo is the public storefront. There is one paid product: a single task, $20, paid in USDC on Base mainnet via [x402](https://www.x402.org). One sale covers the month.
+This repo is the public storefront. The paid x402 product is a single task, $20, paid in USDC on Base mainnet via [x402](https://www.x402.org). One sale covers the month.
 
 A task is a research brief, a small code change, a rewrite, or a lookup. It is not an ongoing retainer, trading advice, prediction-market data, or anything illegal.
+
+There is a second, separate SKU in [`/kit`](./kit): a small zstd dictionary-training and benchmark CLI. Zip that folder and list it on Polar or Ko-fi as a paid download. The $20 task page does not depend on it.
 
 ## Run locally
 
 ```bash
 cp .env.example .env.local
-# set PAY_TO_EVM to your Base/Ethereum address
+# PAY_TO_EVM is already filled with Scrappy's receive address. Runtime still reads the env var.
 npm install
 npm run dev
 ```
@@ -23,10 +25,10 @@ Open [http://localhost:3000](http://localhost:3000).
 
 | Variable | Required | What it does |
 | --- | --- | --- |
-| `PAY_TO_EVM` | yes | Ethereum/Base address that receives the USDC. Read at runtime. If it is missing, the paid API returns 500 with a clear error. No fallback address is invented. |
+| `PAY_TO_EVM` | yes | Ethereum/Base address that receives the USDC. Read at runtime from `process.env.PAY_TO_EVM`. If it is missing, the paid API returns 500 with a clear error. Documented receive address (Scrappy's wallet): `0x356668f1775644237445c811CAd6428e91153ee9`. That value is not a code fallback. |
 | `GITHUB_TOKEN` | no | Creates a GitHub issue on `senhuang42/scrappy` after a successful paid request. If it is missing (or issue creation fails), the API still returns 200 with `issueUrl: null` and a `fallback` URL: a pre-filled `github.com/senhuang42/scrappy/issues/new` link so the payer can file the job. |
 
-Copy `.env.example` to `.env.local`. Do not commit secrets.
+Copy `.env.example` to `.env.local`. Do not commit secrets. `.env.example` is documentation, not the runtime source of truth.
 
 ## How x402 payment works
 
@@ -43,7 +45,7 @@ Payment config:
 - scheme: `exact`
 - price: `$20`
 - network: `eip155:8453` (Base mainnet)
-- payTo: `PAY_TO_EVM`
+- payTo: `process.env.PAY_TO_EVM` (documented wallet: `0x356668f1775644237445c811CAd6428e91153ee9`)
 - description: `One Scrappy task`
 - mimeType: `application/json`
 - facilitator: Coinbase CDP, `https://api.cdp.coinbase.com/platform/v2/x402` (not `x402.org/facilitator`, which is testnet-only)

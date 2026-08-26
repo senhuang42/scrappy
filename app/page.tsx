@@ -45,6 +45,12 @@ export default function HomePage() {
 
       <TaskForm />
 
+      <p className="also">
+        Separate download, not this form: a zstd dictionary-training kit lives
+        in <code>/kit</code> in this repo. Zip it and sell it on Polar or
+        Ko-fi. The $20 task does not wait on that kit.
+      </p>
+
       <p className="foot">
         Paid in USDC on Base mainnet via x402. Real money, not a testnet.
         One sale covers the month.

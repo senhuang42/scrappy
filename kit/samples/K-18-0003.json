@@ -1,0 +1,19 @@
+{
+  "v": 1,
+  "kind": "buoy.sample",
+  "buoy": "K-18",
+  "seq": 10003,
+  "lat": 41.41,
+  "lon": -71.98,
+  "wave_cm": 132,
+  "wind_kt": 18.0,
+  "vis_km": 9.2,
+  "hour_utc": 8,
+  "ok": false,
+  "note": "whitecaps on the outer bar",
+  "extra": {
+    "battery_mv": 11710,
+    "uptime_s": 3600,
+    "fw": "buoy-r3.4"
+  }
+}

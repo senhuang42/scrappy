@@ -1,0 +1,6 @@
+dictkit-work/
+__pycache__/
+*.pyc
+*.zst
+*.zdict
+.DS_Store
