@@ -21,6 +21,8 @@ You get software. You run it on your machine. There is no custom job, no human f
 
 $12, one-time, via Polar (SenWorks). Instant digital download. Not a subscription.
 
+[Buy the kit](https://buy.polar.sh/polar_cl_X62sEcNs7MOhIzUb4yNIq1xAxBo8KYh2J7qZy19cErK)
+
 ## Need
 
 Python 3.9+ (stdlib only) and the `zstd` CLI on your PATH.
