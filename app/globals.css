@@ -113,68 +113,33 @@ main {
   margin-top: 0.25rem;
 }
 
-.split .aside {
-  margin-top: 0.7rem;
-}
-
-form {
+.buy {
   background: var(--fill);
   border: 1px solid var(--line);
   padding: 1.25rem 1.25rem 1.35rem;
+  margin: 1.6rem 0 0;
 }
 
-label {
-  display: block;
-  margin-bottom: 0.85rem;
-}
-
-label span {
-  display: block;
-  margin-bottom: 0.35rem;
+.buy-kicker {
+  margin: 0 0 0.45rem;
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-input,
-textarea {
-  width: 100%;
-  border: 1px solid var(--line);
-  background: #fff;
-  color: var(--ink);
-  font: inherit;
-  padding: 0.55rem 0.65rem;
+.buy-lead {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.35;
 }
 
-textarea {
-  min-height: 9.5rem;
-  resize: vertical;
-}
-
-input:focus,
-textarea:focus,
-button:focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 2px;
-}
-
-button[type="submit"] {
-  margin-top: 0.35rem;
-  width: 100%;
-  border: 1px solid var(--line);
-  background: var(--ink);
-  color: var(--paper);
-  font: inherit;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  padding: 0.75rem 1rem;
-  cursor: pointer;
-}
-
-button[type="submit"]:disabled {
-  opacity: 0.55;
-  cursor: wait;
+.buy-lead code,
+.fine code,
+.contents code,
+.commands code {
+  font-size: 0.88em;
 }
 
 .fine {
@@ -183,45 +148,45 @@ button[type="submit"]:disabled {
   font-size: 0.86rem;
 }
 
-.status {
-  margin-top: 1rem;
-  border: 1px solid var(--line);
-  padding: 0.9rem 1rem;
+.contents,
+.commands {
+  margin-top: 1.8rem;
 }
 
-.status h2 {
-  margin: 0 0 0.35rem;
-  font-size: 1.05rem;
-}
-
-.status.ok h2 {
-  color: var(--ok);
-}
-
-.status.need h2 {
-  color: var(--warn);
-}
-
-.status.error h2 {
-  color: var(--price);
-}
-
-.status p {
-  margin: 0;
-}
-
-.status a {
+.contents h2,
+.commands h2 {
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
   font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.also {
-  margin: 1.6rem 0 0;
+.contents ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.contents li + li {
+  margin-top: 0.35rem;
+}
+
+.commands p {
+  margin: 0 0 0.55rem;
   color: var(--muted);
-  font-size: 0.92rem;
 }
 
-.also code {
-  font-size: 0.88em;
+.commands pre {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.85rem;
+  background: var(--fill);
+  border: 1px solid var(--line);
+  overflow-x: auto;
+}
+
+.commands code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.86rem;
 }
 
 .foot {

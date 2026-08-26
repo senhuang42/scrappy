@@ -8,14 +8,14 @@ That last part is the point. Training and testing on the same records flatters
 the dictionary. This kit splits the corpus first, trains on one side, and
 reports sizes on the holdout.
 
-Zip this folder and list it as a paid download (Polar, Ko-fi, whatever you
-use). It does not gate the $20 x402 task on the storefront.
+This folder is the product. Polar (SenWorks) sells it as a $12 one-time
+download and delivers a zip of these files automatically.
 
 ## What a dictionary is for
 
 zstd already finds repeated bytes inside a single buffer. It cannot see the
-next file. If you compress a pile of small, similarly shaped records — JSON
-events, log lines, HTML fragments, protobuf-ish dumps — each file pays the
+next file. If you compress a pile of small, similarly shaped records (JSON
+events, log lines, HTML fragments, protobuf-ish dumps), each file pays the
 same header tax and re-encodes the same keys.
 
 A dictionary is a bag of those shared fragments, built ahead of time. The
